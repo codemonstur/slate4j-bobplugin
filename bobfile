@@ -4,9 +4,10 @@ dependencies:
     scope: provided
   - project: ../slate4j
 
-check-versions
-	  mvn versions:display-dependency-updates
-	  mvn versions:display-plugin-updates
+build
+	  echo "[${PROJECT_NAME}] Building"
+    bob -i build
+    version increment patch
 
 release-notes
   	echo "[${PROJECT_NAME}] Writing release notes to src/docs/releases/release-${PROJECT_VERSION}.txt"
@@ -16,7 +17,7 @@ release-notes
 	  git log --pretty="%s" ${PREVIOUS_TAG}... master >> src/docs/releases/release-${PROJECT_VERSION}.txt
 
 deploy
-    bob build
+    run-target build
 	  echo "[${PROJECT_NAME}] Tagging and pushing to github"
 	  git tag ${PROJECT_NAME}-${PROJECT_VERSION}
 	  git push && git push --tags
