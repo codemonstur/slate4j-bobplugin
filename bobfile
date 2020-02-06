@@ -1,12 +1,13 @@
+name: bobslate4j
 version: 0.1.0
 dependencies:
-  - project: ../bobthebuilder
+  - project: ../bobthebuildtool
     scope: provided
   - project: ../slate4j
 
 build
 	  echo "[${PROJECT_NAME}] Building"
-    bob -i build
+    run-target -i build
     version increment patch
 
 release-notes
