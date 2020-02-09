@@ -1,16 +1,16 @@
 package bobslate4j;
 
 import bobthebuildtool.pojos.buildfile.Project;
-import bobthebuildtool.pojos.internal.DescriptionAndInterface;
+
+import java.util.Map;
 
 public enum Main {;
 
     public static void installPlugin(final Project project) {
-        project.commands.put("slate4j", new DescriptionAndInterface<>("Generates documentation in slatedocs format"
-                , (project1, environment, args) -> {
-            slate4j.MavenDocs
-            return 0;
-        }));
+        project.addCommand("slate4j", "Generates documentation in slatedocs format", Main::generateSlateDocs);
     }
 
+    private static int generateSlateDocs(final Project project, final Map<String, String> env, final String[] args) {
+        return 0;
+    }
 }

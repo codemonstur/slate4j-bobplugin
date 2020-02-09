@@ -8,7 +8,6 @@ dependencies:
 build
     echo "[${PROJECT_NAME}] Building"
     run-target -i clean build
-    version increment patch
 
 release-notes
     echo "[${PROJECT_NAME}] Writing release notes to src/docs/releases/release-${PROJECT_VERSION}.txt"
