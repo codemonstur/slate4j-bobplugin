@@ -1,13 +1,21 @@
+plugin codemonstur/htmlcompiler-bobplugin:0.1.0
+
+name: slate4j
 packaging: bob-plugin
 version: 0.1.0
+release: 13
 dependencies:
   - project: ../bobthebuildtool
     scope: provided
-  - project: ../slate4j
+  - repository: com.vladsch.flexmark:flexmark-all:0.50.46
+  - repository: org.jsoup:jsoup:1.12.1
+  - repository: com.google.code.gson:gson:2.8.6
 
 build
     echo "[${PROJECT_NAME}] Building"
-    run-target -i clean build
+    run-target -i clean
+    compile-html
+    run-target -i build
 
 release-notes
     echo "[${PROJECT_NAME}] Writing release notes to src/docs/releases/release-${PROJECT_VERSION}.txt"
@@ -18,7 +26,9 @@ release-notes
 
 deploy
     echo "[${PROJECT_NAME}] Clean and build for deploy"
-    run-target -i clean build
+    run-target -i clean
+    compile-html
+    run-target -i build
     echo "[${PROJECT_NAME}] Tagging and pushing to github"
     git tag ${PROJECT_NAME}-${PROJECT_VERSION}
     git push && git push --tags
