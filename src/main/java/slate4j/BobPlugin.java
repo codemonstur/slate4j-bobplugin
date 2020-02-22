@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import static bobthebuildtool.services.Functions.isNullOrEmpty;
+import static java.nio.file.Files.exists;
 import static java.nio.file.Files.readAllBytes;
 import static java.nio.file.StandardOpenOption.CREATE;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
@@ -42,6 +43,8 @@ public enum BobPlugin {;
         final CliDocs arguments = newCliParser(CliDocs::new).parse(args);
 
         final Path inputFile = project.parentDir.resolve(arguments.indexFile);
+        if (!exists(inputFile)) return 0;
+
         final Path logoFile = isNullOrEmpty(arguments.logoFile) ? null : project.parentDir.resolve(arguments.logoFile);
         final Path outputPath = project.getBuildTarget().resolve(arguments.outputFile);
 
