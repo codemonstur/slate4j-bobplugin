@@ -2,6 +2,7 @@ plugin codemonstur/htmlcompiler-bobplugin:0.1.0
 
 name: slate4j
 packaging: bob-plugin
+enablePreview: false
 version: 0.2.0
 release: 13
 dependencies:
