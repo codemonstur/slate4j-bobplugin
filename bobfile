@@ -11,6 +11,8 @@ dependencies:
   - repository: com.vladsch.flexmark:flexmark-all:0.50.46
   - repository: org.jsoup:jsoup:1.12.1
   - repository: com.google.code.gson:gson:2.8.6
+  - repository: junit:junit:4.13.1
+    scope: test
 
 -- Cleans then builds the code, prints a nice message first.
 build
