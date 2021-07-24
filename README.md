@@ -1,5 +1,4 @@
 
-[![Build Status](https://travis-ci.org/codemonstur/slate4j-bobplugin.svg?branch=master)](https://travis-ci.org/codemonstur/slate4j-bobplugin)
 [![GitHub Release](https://img.shields.io/github/release/codemonstur/slate4j-bobplugin.svg)](https://github.com/codemonstur/slate4j-bobplugin/releases) 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
