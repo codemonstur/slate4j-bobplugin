@@ -1,6 +1,7 @@
 package slate4j;
 
 import bobthebuildtool.pojos.buildfile.Project;
+import bobthebuildtool.pojos.error.VersionTooOld;
 import com.google.gson.Gson;
 import com.vladsch.flexmark.ext.tables.TablesExtension;
 import com.vladsch.flexmark.html.HtmlRenderer;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import static bobthebuildtool.services.Functions.isNullOrEmpty;
+import static bobthebuildtool.services.Update.requireBobVersion;
 import static java.nio.file.Files.exists;
 import static java.nio.file.Files.readAllBytes;
 import static java.nio.file.StandardOpenOption.CREATE;
@@ -34,7 +36,8 @@ import static slate4j.model.SlateFile.toSlateFile;
 
 public enum BobPlugin {;
 
-    public static void installPlugin(final Project project) {
+    public static void installPlugin(final Project project) throws VersionTooOld {
+        requireBobVersion("7");
         project.addCommand("slate4j", "Generates documentation in slatedocs format", BobPlugin::generateSlateDocs);
     }
 
