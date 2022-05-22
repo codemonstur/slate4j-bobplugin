@@ -9,8 +9,8 @@ release: 13
 dependencies:
   - project: ../bobthebuildtool
     scope: provided
-  - repository: com.vladsch.flexmark:flexmark-all:0.62.2
-  - repository: org.jsoup:jsoup:1.14.2
+  - repository: com.vladsch.flexmark:flexmark-all:0.64.0
+  - repository: org.jsoup:jsoup:1.15.1
   - repository: junit:junit:4.13.2
     scope: test
 
