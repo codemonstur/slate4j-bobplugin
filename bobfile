@@ -5,7 +5,6 @@ name: slate4j
 packaging: bob-plugin
 enablePreview: false
 version: 3
-release: 13
 dependencies:
   - project: ../bobthebuildtool
     scope: provided
