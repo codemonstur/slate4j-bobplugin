@@ -1,5 +1,5 @@
 include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-app-github
-plugin codemonstur/htmlcompiler-bobplugin:5.1.0
+plugin codemonstur/htmlcompiler-bobplugin:5.6.0
 
 name: slate4j
 packaging: bob-plugin
